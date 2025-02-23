@@ -30,18 +30,18 @@ public class Main {
 
         StringBuilder result = new StringBuilder();
 
-        // Разбираем тысячи
+        
         if (number >= 1000) {
             int thousands = number / 1000;
             if (thousands < 10) {
-                // Если тысячи от 1 до 9
+                
                 if (thousands == 1) {
                     result.append("миң ");
                 } else {
                     result.append(ones[thousands]).append(" миң ");
                 }
             } else {
-                // Если тысячи двузначные (10-99)
+                
                 if (thousands < 20) {
                     result.append(teens[thousands - 10]).append(" миң ");
                 } else {
@@ -55,13 +55,13 @@ public class Main {
             number %= 1000;
         }
 
-        // Разбираем сотни
+        
         if (number >= 100) {
             result.append(hundreds[number / 100]).append(" ");
             number %= 100;
         }
 
-        // Разбираем десятки
+        
         if (number >= 20) {
             result.append(tens[number / 10]).append(" ");
             number %= 10;
@@ -70,7 +70,7 @@ public class Main {
             number = 0;
         }
 
-        // Разбираем единицы
+        
         if (number > 0) {
             result.append(ones[number]);
         }
